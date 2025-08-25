@@ -1,80 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My GitHub Page</title>
-  <style>
-    :root {
-      --primary: #4f46e5;
-      --secondary: #06b6d4;
-      --bg: #f8fafc;
-      --text: #1e293b;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlexCore Gym Wear</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* Reset & base */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background: #f5f5f5; color: #333; }
+a { text-decoration: none; }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px; /* ছোট padding */
+    background: #111;
+    color: #fff;
+    position: relative;
+}
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.logo img {
+    height: 40px; /* ছোট লোগো */
+    width: auto;
+}
 
-    .container {
-      background: white;
-      padding: 2rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 400px;
-      width: 100%;
-    }
+.header-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px; /* ছোট text */
+    font-weight: bold;
+    color: #ff4b2b;
+    cursor: pointer; /* ক্লিক করার মতো দেখাবে */
+}
 
-    h1 {
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
+nav a { color: #fff; margin-left: 15px; font-weight: 500; transition: 0.3s; font-size: 14px; }
+nav a:hover { color: #ff6e50; }
 
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1rem;
-      color: #475569;
-    }
+/* Hero */
+.hero { 
+    background: #222 url('https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; 
+    color: #fff; 
+    text-align: center; 
+    height: 70vh; /* একটু ছোট height */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+}
+.hero h2 { font-size: 40px; margin-bottom: 15px; }
+.hero p { font-size: 18px; margin-bottom: 20px; }
+.hero a { background: #ff4b2b; color: #fff; padding: 12px 25px; border-radius: 5px; transition: 0.3s; }
+.hero a:hover { background: #ff6e50; }
 
-    a.button {
-      background-color: var(--primary);
-      color: white;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-      display: inline-block;
-    }
+/* Products */
+section { padding: 60px 30px; } /* ছোট padding */
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
+.card:hover { transform: translateY(-5px); }
+.card img { width: 100%; height: 220px; object-fit: cover; }
+.card h3 { padding: 10px 0 5px; font-size: 16px; }
+.card p { padding-bottom: 10px; color: #666; font-size: 14px; }
+.card button { margin-bottom: 10px; background: #ff4b2b; border: none; padding: 10px 20px; color: #fff; border-radius: 5px; cursor: pointer; transition: 0.3s; font-size: 14px; }
+.card button:hover { background: #ff6e50; }
 
-    a.button:hover {
-      background-color: #4338ca;
-    }
+/* Contact */
+#contact { text-align: center; }
+#contact p { margin: 8px 0; font-size: 14px; }
 
-    @media (max-width: 480px) {
-      .container {
-        padding: 1.5rem 1rem;
-      }
-    }
-  </style>
+/* Footer */
+footer { background: #111; color: #fff; text-align: center; padding: 20px 15px; margin-top: 40px; }
+footer .brand {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff4b2b;
+}
+
+/* Responsive */
+@media(max-width:768px){ 
+    header{flex-direction:column;text-align:center;} 
+    nav{margin-top:8px;} 
+    
+    .hero h2 { font-size: 28px; }
+    .hero p { font-size: 16px; }
+    .hero a { padding: 10px 20px; font-size: 14px; }
+}
+</style>
 </head>
 <body>
-  <div class="container">
-    <h1>Hello, I'm [Your Name]</h1>
-    <p>Welcome to my GitHub Page. I build modern web experiences and open-source projects.</p>
-    <a class="button" href="https://github.com/yourusername" target="_blank">View My GitHub</a>
-  </div>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <div class="header-text" onclick="location.reload()">FlexCore</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <h2>WELCOME TO FlexCoreBD</h2>
+    <p>Style Comfort With Luxury</p>
+    <a href="#shop">SEE PRODUCTS</a>
+</section>
+
+<section id="shop">
+    <h2 style="text-align:center; margin-bottom:40px;">Our Products</h2>
+    <div class="products">
+        <div class="card">
+            <img src="myphoto.jpg" alt="FlexCore Compression T-shirt">
+            <h3>Compression T-shirt</h3>
+            <p>৳1050</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="myphoto.jpg" alt="FlexCore Stringer Vest">
+            <h3>Stringer Vest</h3>
+            <p>৳1050</p>
+            <button>Buy Now</button>
+        </div>
+        <div class="card">
+            <img src="myphoto.jpg" alt="FlexCore Gym Gloves">
+            <h3>Gym Gloves</h3>
+            <p>৳600</p>
+            <button>Buy Now</button>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@flexcore.com</p>
+    <p>Phone: +880 1234 567890</p>
+    <p>Visit: flexcorebd.pages.dev</p>
+</section>
+
+<footer>
+    &copy; 2025 FlexCore. All rights reserved.  Admin:MD Redwan Mahmud
+    <div class="brand">FlexCore</div>
+</footer>
+
 </body>
 </html>
