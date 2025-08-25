@@ -16,14 +16,14 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px 30px; /* ছোট padding */
+    padding: 15px 30px;
     background: #111;
     color: #fff;
     position: relative;
 }
 
 .logo img {
-    height: 40px; /* ছোট লোগো */
+    height: 40px;
     width: auto;
 }
 
@@ -31,10 +31,10 @@ header {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 20px; /* ছোট text */
+    font-size: 20px;
     font-weight: bold;
     color: #ff4b2b;
-    cursor: pointer; /* ক্লিক করার মতো দেখাবে */
+    cursor: pointer;
 }
 
 nav a { color: #fff; margin-left: 15px; font-weight: 500; transition: 0.3s; font-size: 14px; }
@@ -45,7 +45,7 @@ nav a:hover { color: #ff6e50; }
     background: #222 url('https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; 
     color: #fff; 
     text-align: center; 
-    height: 70vh; /* একটু ছোট height */
+    height: 70vh;
     display: flex; 
     flex-direction: column; 
     justify-content: center; 
@@ -56,15 +56,15 @@ nav a:hover { color: #ff6e50; }
 .hero a:hover { background: #ff6e50; }
 
 /* Products */
-section { padding: 60px 30px; } /* ছোট padding */
+section { padding: 60px 30px; }
 .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
 .card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; transition: 0.3s; }
 .card:hover { transform: translateY(-5px); }
 .card img { width: 100%; height: 220px; object-fit: cover; }
 .card h3 { padding: 10px 0 5px; font-size: 16px; }
 .card p { padding-bottom: 10px; color: #666; font-size: 14px; }
-.card button { margin-bottom: 10px; background: #ff4b2b; border: none; padding: 10px 20px; color: #fff; border-radius: 5px; cursor: pointer; transition: 0.3s; font-size: 14px; }
-.card button:hover { background: #ff6e50; }
+.card button { margin-bottom: 10px; background: #25D366; border: none; padding: 10px 20px; color: #fff; border-radius: 5px; cursor: pointer; transition: 0.3s; font-size: 14px; }
+.card button:hover { background: #1ebe5d; }
 
 /* Contact */
 #contact { text-align: center; }
@@ -117,19 +117,19 @@ footer .brand {
             <img src="myphoto.jpg" alt="FlexCore Compression T-shirt">
             <h3>Compression T-shirt</h3>
             <p>৳1050</p>
-            <button>Buy Now</button>
+            <button onclick="window.location.href='https://wa.me/8801700000000?text=I want to buy Compression T-shirt (1050৳)'">Buy Now</button>
         </div>
         <div class="card">
             <img src="myphoto.jpg" alt="FlexCore Stringer Vest">
             <h3>Stringer Vest</h3>
             <p>৳1050</p>
-            <button>Buy Now</button>
+            <button onclick="window.location.href='https://wa.me/8801700000000?text=I want to buy Stringer Vest (1050৳)'">Buy Now</button>
         </div>
         <div class="card">
             <img src="myphoto.jpg" alt="FlexCore Gym Gloves">
             <h3>Gym Gloves</h3>
             <p>৳600</p>
-            <button>Buy Now</button>
+            <button onclick="window.location.href='https://wa.me/8801700000000?text=I want to buy Gym Gloves (600৳)'">Buy Now</button>
         </div>
     </div>
 </section>
@@ -142,7 +142,7 @@ footer .brand {
 </section>
 
 <footer>
-    &copy; 2025 FlexCore. All rights reserved.  Admin:MD Redwan Mahmud
+    &copy; 2025 FlexCore. All rights reserved.  Admin: MD Redwan Mahmud
     <div class="brand">FlexCore</div>
 </footer>
 
