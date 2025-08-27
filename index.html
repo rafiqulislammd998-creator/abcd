@@ -96,18 +96,37 @@ footer .text { font-size:12px; color:#ccc; margin-bottom:5px; }
 footer .social img { width:22px; margin:0 4px; transition: transform 0.3s, opacity 0.3s; }
 footer .social img:hover { transform: scale(1.2); opacity:0.8; }
 
-/* Mobile popup full screen */
+/* Mobile small popup menu (fixed, column) */
 #popup-nav {
-    position: fixed;
-    top: 0; right: 0; bottom: 0; left: 0;
+    position: fixed; /* fixed so it shows on any scroll position */
+    top: 60px;       /* below header */
+    right: 15px;
     background: #111;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* vertical column */
+    padding: 10px 15px;
     z-index: 2000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
 }
-#popup-nav a { margin: 15px 0; color: #fff; font-size: 20px; }
+
+#popup-nav.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+#popup-nav a {
+    margin: 8px 0;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+}
 
 /* Responsive */
 @media(max-width:768px){ 
@@ -143,7 +162,7 @@ footer .social img:hover { transform: scale(1.2); opacity:0.8; }
     </nav>
 </header>
 
-<!-- Popup full screen menu -->
+<!-- Popup small menu -->
 <div id="popup-nav">
     <a href="#home" onclick="closePopup()">Home</a>
     <a href="#shop" onclick="closePopup()">Shop</a>
@@ -204,9 +223,9 @@ footer .social img:hover { transform: scale(1.2); opacity:0.8; }
 <footer>
     <div class="text">&copy; 2025 FlexCore. Admin: MD Redwan Mahmud</div>
     <div class="social">
-        <a href="https://facebook.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" loading="lazy"></a>
-        <a href="https://instagram.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" loading="lazy"></a>
-        <a href="https://tiktok.com" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok" loading="lazy"></a>
+        <a href="https://www.facebook.com/profile.php?id=61571553300166" target="_blank"><img src="fb.png" alt="Facebook" loading="lazy"></a>
+        <a href="https://www.instagram.com/redw.an8470?igsh=MXJmOGg4NjZvdDd1MA==" target="_blank"><img src="ins.png" alt="Instagram" loading="lazy"></a>
+        <a href="https://youtube.com" target="_blank"><img src="yt.png" alt="YouTube" loading="lazy"></a>
     </div>
 </footer>
 
@@ -232,12 +251,14 @@ searchInput.addEventListener('keyup', function() {
     }
 });
 
-// Mobile popup toggle
+// Mobile popup toggle (fixed, column, smooth slide)
 function togglePopup() {
-    document.getElementById('popup-nav').style.display = "flex";
+    const popup = document.getElementById('popup-nav');
+    popup.classList.toggle('show');
 }
 function closePopup() {
-    document.getElementById('popup-nav').style.display = "none";
+    const popup = document.getElementById('popup-nav');
+    popup.classList.remove('show');
 }
 </script>
 
