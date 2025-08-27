@@ -16,7 +16,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 15px;
+    padding: 10px 20px;
     background: #111;
     color: #fff;
     position: sticky;
@@ -27,27 +27,31 @@ header {
 /* Logo */
 .logo img { height: 40px; width: auto; }
 
-/* Search Bar */
-.header-search { flex: 1; text-align: center; }
+/* Search Bar in header */
+.header-search {
+    flex: 1;
+    text-align: center;
+}
 .header-search input {
-    width: 60%; max-width: 220px;
-    padding: 6px 10px;
+    width: 60%;
+    max-width: 250px;
+    padding: 7px 12px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 /* Navbar */
 nav { display: flex; align-items: center; }
 nav a { 
     color: #fff;
-    margin-left: 15px;
+    margin-left: 20px;
     font-weight: 500;
     font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: 0.3s;
+    padding: 6px 12px;
+    border-radius: 6px;
     position: relative;
+    transition: all 0.3s ease;
 }
 nav a::after {
     content: "";
@@ -67,62 +71,72 @@ nav a:hover { color: #ff4b2b; background: rgba(255,75,43,0.1); }
     background: #222 url('https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat; 
     color: #fff; 
     text-align: center; 
-    min-height: 30vh;  /* compact */
-    display: flex; flex-direction: column; justify-content: center; 
-    padding: 20px;
+    min-height: 40vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    padding: 30px 20px;
     position: relative;
 }
 .hero::before { content:""; position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
 .hero h2, .hero p, .hero a { position: relative; z-index: 1; }
-.hero h2 { font-size: 24px; margin-bottom: 8px; }
-.hero p { font-size: 14px; margin-bottom: 12px; }
-.hero a { background: #ff4b2b; color: #fff; padding: 8px 16px; border-radius: 5px; font-size: 13px; transition: 0.3s; }
+.hero h2 { font-size: 28px; margin-bottom: 10px; }
+.hero p { font-size: 16px; margin-bottom: 15px; }
+.hero a { background: #ff4b2b; color: #fff; padding: 10px 20px; border-radius: 5px; font-size: 14px; transition: 0.3s; }
 .hero a:hover { background: #ff6e50; }
 
 /* Products */
-section { padding: 50px 20px; }
-.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+section { padding: 60px 30px; }
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
 .card { 
-    background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center; display: flex; flex-direction: column; justify-content: space-between;
-    opacity: 0; transform: translateY(30px); transition: all 0.6s ease;
+    background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; transition: 0.3s;
+    display: flex; flex-direction: column; justify-content: space-between;
+    opacity: 0; transform: translateY(40px); transition: all 0.8s ease;
 }
 .card.show { opacity: 1; transform: translateY(0); }
-.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
-.card img { width: 100%; height: 180px; object-fit: cover; }
-.card h3 { padding: 8px 0 4px; font-size: 15px; }
-.card p { padding-bottom: 8px; color: #666; font-size: 13px; }
-.card button { margin-bottom: 8px; background: #25D366; border: none; padding: 8px 16px; color: #fff; border-radius: 5px; cursor: pointer; transition: 0.3s; font-size: 13px; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+.card img { width: 100%; height: 220px; object-fit: cover; }
+.card h3 { padding: 10px 0 5px; font-size: 16px; }
+.card p { padding-bottom: 10px; color: #666; font-size: 14px; }
+.card button { margin-bottom: 10px; background: #25D366; border: none; padding: 10px 20px; color: #fff; border-radius: 5px; cursor: pointer; transition: 0.3s; font-size: 14px; }
 .card button:hover { background: #1ebe5d; }
 
 /* Reviews */
-.reviews { margin-top: 30px; text-align: left; padding-left: 20px; }
-.review-card { background: #fff; padding: 12px; border-radius: 10px; margin: 12px 0; max-width: 500px; box-shadow: 0 5px 12px rgba(0,0,0,0.1); }
-.review-card h4 { color: #ff4b2b; margin-bottom: 5px; font-size: 14px; }
-.review-card p { font-size: 13px; color: #444; }
-.stars { color: gold; margin-bottom: 6px; font-size: 14px; }
+.reviews { margin-top: 40px; text-align: left; padding-left: 40px; }
+.review-card { background: #fff; padding: 15px; border-radius: 10px; margin: 15px 0; max-width: 600px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.review-card h4 { color: #ff4b2b; margin-bottom: 5px; }
+.review-card p { font-size: 14px; color: #444; }
+.stars { color: gold; margin-bottom: 8px; }
 
 /* Contact */
 #contact { text-align: center; }
-#contact p { margin: 6px 0; font-size: 13px; }
+#contact p { margin: 8px 0; font-size: 14px; }
 #contact a { color: #ff4b2b; }
 
 /* Footer */
-footer { background:#111; color:#fff; text-align:center; padding:12px 10px; }
-footer .text { font-size:12px; color:#ccc; margin-bottom:5px; }
-footer .social img { width:22px; margin:0 4px; transition: transform 0.3s, opacity 0.3s; }
+footer {
+    background:#111; 
+    color:#fff; 
+    text-align:center; 
+    padding:15px 10px;
+}
+footer .text { font-size:13px; color:#ccc; margin-bottom:8px; }
+footer .social img {
+    width:25px; 
+    margin:0 5px; 
+    transition: transform 0.3s, opacity 0.3s;
+}
 footer .social img:hover { transform: scale(1.2); opacity:0.8; }
 
 /* Responsive */
 @media(max-width:768px){ 
     header{flex-direction:column;text-align:center;} 
-    .header-search { margin:8px 0; }
-    nav{margin-top:6px; flex-direction: column;}
-    .hero h2 { font-size: 20px; }
-    .hero p { font-size: 12px; }
-    .hero a { padding:6px 12px; font-size:12px; }
+    .header-search { margin:10px 0; }
+    nav{margin-top:8px; flex-direction: column;}
+    .hero h2 { font-size: 24px; }
+    .hero p { font-size: 14px; }
 }
-@media(max-width:500px){ .card img { height: 140px; } }
+@media(max-width:500px){ .card img { height: 160px; } }
 </style>
 </head>
 <body>
@@ -218,7 +232,7 @@ searchInput.addEventListener('keyup', function() {
     for (let i = 0; i < cards.length; i++) {
         let title = cards[i].getElementsByTagName("h3")[0].innerText.toLowerCase();
         if(title.indexOf(filter) > -1){ 
-            cards[i].style.display = "flex"; 
+            cards[i].style.display = "flex"; // flex preserves layout
         } else{ 
             cards[i].style.display = "none"; 
         }
